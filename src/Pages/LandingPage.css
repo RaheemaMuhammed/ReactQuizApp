@@ -6,6 +6,11 @@
    
     height: 50vh;
 }
+#loading{
+   
+    height: 100vh;
+    background: transparent;
+}
 .score{
     font-size: 2rem;
     font-weight: 600;
@@ -14,12 +19,14 @@
     
 }
 .start{
-    margin-left: 48%;
-    width: fit-content;
-    padding: 3px;
+    margin-left: 45%;
+    width: 10%;
+    padding: 5px;
     cursor: pointer;
     border: 2px solid black;
     border-radius: 5px;
     text-decoration: none;
     color: black;
+    font-weight: bolder;
+    text-align: center;
 }

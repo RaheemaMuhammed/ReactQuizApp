@@ -3,7 +3,7 @@ import  { useEffect, useState } from 'react'
 
 axios.defaults.baseURL="https://opentdb.com/"
 const useAxios = () => {
-    const url ="/api.php?amount=10&type=multiple"
+    const url ="/api.php?amount=10&category=18&type=multiple"
     const [response,setResponse] =useState(null)
     const [error,setError] = useState("")
     const [loading,setLoading] =useState(true)

@@ -3,22 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 const ScoreSlice = createSlice({
     name:'score',
     initialState:{
-        total:0,
-        scoreNow:0
+        highScore:0,
+        score:0
     },
     reducers:{
-        setScore:(state,action)=>{
-            state.total=state.total+action.payload
+        setHighScore:(state,action)=>{
+            state.highScore=action.payload
         },
-        setScoreNow:(state,action)=>{
-            state.scoreNow=state.scoreNow+1
+        setScore:(state,action)=>{
+            state.score=state.score+1
 
         },
-        delScoreNow:(state,action)=>{
-            state.scoreNow=0
+        delScore:(state,action)=>{
+            state.score=0
         }
     }
 })
 
-export const {setScore,setScoreNow,delScoreNow} =ScoreSlice.actions
+export const {setHighScore,setScore,delScore} =ScoreSlice.actions
 export default ScoreSlice.reducer

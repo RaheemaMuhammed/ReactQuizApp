@@ -2,11 +2,11 @@ import React, { useState,useEffect } from 'react'
 import useAxios from '../api/useAxios'
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
-
 import Spinner from 'react-bootstrap/Spinner';
 import { useDispatch } from 'react-redux';
-import { setScoreNow } from '../Redux/ScoreSlice';
-
+import { setScore } from '../Redux/ScoreSlice';
+import { decode } from 'html-entities';
+import './LandingPage.css'
 
 const getRandom = (max) =>{
     return Math.floor(Math.random() * Math.floor(max));
@@ -39,7 +39,7 @@ const QuizPage = () => {
       const handleOptionClick = (e)=>{
         const question = response?.results[questionIndex]
         if(e.target.textContent === question.correct_answer){
-            dispatch(setScoreNow())
+            dispatch(setScore())
         }
         
         
@@ -52,25 +52,29 @@ const QuizPage = () => {
       }
       if(loading){
         return (
-            <div className='container-fluid d-flex justify-content-center align-items-end'>
-<p>loading</p>
-                
+            <div id="loading" className='vh-100 text-center d-flex justify-content-center align-items-center' >
+                <h1>
+
+                Loading ......
+                </h1>
             </div>
+                
+            
         )
       }
   return (
     <div className="container" style={{background:'transparent'}}>
     <div className="row" >
         <div className="col text-center" >
-            <h1  style={{marginTop:'20%'}}>Question :{questionIndex+1}</h1>
-            <p>{response?.results[questionIndex]?.question}</p>
+            <h2  style={{marginTop:'20%'}}>Question :{questionIndex+1}</h2>
+            <h3>{decode(response?.results[questionIndex]?.question)}</h3>
             {options.map((data,index)=>(
                 <div className='d-grid gap-4 py-2'>
 
-                    <Button onClick={handleOptionClick} size='lg' key={index} >{data}</Button>
+                    <Button onClick={handleOptionClick} size='lg' key={index} >{decode(data)}</Button>
                 </div>
             ))}
-            <p>{questionIndex}/{response?.results?.length}</p>
+            <p>{questionIndex+1}/{response?.results?.length}</p>
         </div>
     </div>
 </div>
