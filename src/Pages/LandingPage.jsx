@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 const LandingPage = () => {
     const navigate=useNavigate()
     const highScore =useSelector(state=>state.ScoreReducer.highScore)
-    console.log(highScore);
   return (
     <div >
 

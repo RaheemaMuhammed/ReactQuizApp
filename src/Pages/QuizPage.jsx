@@ -16,12 +16,9 @@ const QuizPage = () => {
     const { response,error,loading} =useAxios()
     const dispatch =useDispatch()
     
-    console.log(error);
     const navigate = useNavigate()
-    const [questions,setQuestions] =useState([])
     const [questionIndex,setQuestionIndex] =useState(0)
     const [options,setOptions] = useState([])
-    console.log(response);
     useEffect(() => {
         if (response?.results?.length) {
             const question = response?.results[questionIndex]
@@ -52,11 +49,10 @@ const QuizPage = () => {
       }
       if(loading){
         return (
-            <div id="loading" className='vh-100 text-center d-flex justify-content-center align-items-center' >
-                <h1>
-
+           
+            <div id="loading" className='vh-100 text-center font-weight-bold d-flex justify-content-center align-items-center' >
+               
                 Loading ......
-                </h1>
             </div>
                 
             
