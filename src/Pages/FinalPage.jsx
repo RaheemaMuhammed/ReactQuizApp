@@ -33,7 +33,7 @@ const FinalPage = () => {
  
   <div className="card-body ">
     <h5 className="font-weight-bold">Your Score : {score}</h5>
-<button  onClick={()=>{dispatch(delScore());navigate('/');}} role='button' className='btn mt-2'>Take another Quiz</button>
+<button  onClick={()=>{dispatch(delScore());navigate('/ReactQuizApp/');}} role='button' className='btn mt-2'>Take another Quiz</button>
 
   </div>
 </div>

@@ -14,7 +14,7 @@ const LandingPage = () => {
 <p className='score'>High Score : {highScore}</p>
 </div>
 
-<div className='start' onClick={()=>navigate('/quiz')}>
+<div className='start' onClick={()=>navigate('/ReactQuizApp/quiz')}>
     Start
 </div>
 

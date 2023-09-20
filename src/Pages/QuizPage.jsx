@@ -44,7 +44,7 @@ const QuizPage = () => {
             setQuestionIndex(questionIndex+1)
         }else{
           
-            navigate('/final')
+            navigate('/ReactQuizApp/final')
         }
       }
       if(loading){
