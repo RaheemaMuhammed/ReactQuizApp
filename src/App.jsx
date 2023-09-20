@@ -9,9 +9,9 @@ function App() {
     <BrowserRouter>
 
  <Routes>
-   <Route path="/" Component={LandingPage}/>
-   <Route path="/quiz" Component={QuizPage}/>
-   <Route path="/final" Component={FinalPage}/>
+   <Route path="/ReactQuizApp/" Component={LandingPage}/>
+   <Route path="/ReactQuizApp/quiz" Component={QuizPage}/>
+   <Route path="/ReactQuizApp/final" Component={FinalPage}/>
    
  </Routes>
 
